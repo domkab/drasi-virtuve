@@ -1,0 +1,117 @@
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint ==tablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+  }
+  @else if $breakpoint ==mobile {
+    @media (max-width: #{$breakpoint-mobile}) {
+      @content;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+// Menu container styles
+.menuContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 980px;
+  padding: 2rem;
+}
+
+// Address styling
+.address {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--foreground);
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: transparent;
+  z-index: 1;
+
+  @include respond-to(tablet) {
+    top: 6%;
+    font-size: 0.4rem;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 0.4rem;
+  }
+}
+
+
+// Social media container styles
+.socialMedia {
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  top: 6%;
+}
+
+.socialMediaLeft {
+  left: 32px;
+}
+
+.socialMediaRight {
+  right: 32px;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--foreground);
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.socialText {
+  font-size: 1rem;
+
+  @include respond-to(tablet) {
+    font-size: 0.875rem;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 0.5rem;
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+
+  @include respond-to(tablet) {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include respond-to(mobile) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Image styling
+.image {
+  height: auto;
+  border-radius: 8px;
+  max-width: 100%;
+}
