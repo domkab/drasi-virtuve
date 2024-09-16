@@ -20,6 +20,10 @@ $breakpoint-mobile: 480px;
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
+
+  @include respond-to(tablet) {
+    padding: 0;
+  }
 }
 
 // Menu container styles
@@ -42,24 +46,28 @@ $breakpoint-mobile: 480px;
   text-align: center;
   background-color: transparent;
   z-index: 1;
+  
+  &:hover {
+    opacity: 0.8;
+  }
 
   @include respond-to(tablet) {
-    top: 6%;
-    font-size: 0.4rem;
+    top: 4%;
+    font-size: 0.8rem;
   }
 
   @include respond-to(mobile) {
-    font-size: 0.4rem;
+    top: 6.5%;
+    font-size: 0.5rem;
   }
 }
-
 
 // Social media container styles
 .socialMedia {
   position: absolute;
   display: flex;
   gap: 0.5rem;
-  top: 6%;
+  top: 6.5%;
 }
 
 .socialMediaLeft {

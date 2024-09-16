@@ -1,12 +1,21 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from './styles/home.module.scss';
-import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.menuContainer}>
         {/* Left Social Media Icon */}
-        <div className={styles.address}>Antakalnio g. 77, Vilnius</div>
+        <div className={styles.address}>
+          <a
+            href="https://g.co/kgs/7kiC49T"
+            target="_blank"
+            rel="noopener noreferrer"
+            // className={styles.socialText}
+          >
+            Antakalnio g. 77, Vilnius
+          </a>
+        </div>
         <div className={`${styles.socialMedia} ${styles.socialMediaLeft}`}>
           <a
             href="https://www.facebook.com/share/H2tt6vAqa9WJi8jx/"
@@ -14,7 +23,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.socialItem}
           >
-            <Image
+            <img
               src="/icons/facebook.svg"
               alt="Facebook"
               width={32}
@@ -26,7 +35,7 @@ export default function Home() {
         </div>
 
         {/* Menu Image */}
-        <Image
+        <img
           src="/images/menu.png"
           alt="Restaurant Menu"
           width={1000}
@@ -42,7 +51,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.socialItem}
           >
-            <Image
+            <img
               src="/icons/instagram.svg"
               alt="Instagram"
               width={32}
